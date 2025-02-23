@@ -1,0 +1,313 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+h1 {
+    font-size: 2rem; /* Reverted to original size for stability */
+    font-weight: bold;
+    color: #f10b0b; /* Red text, unchanged */
+}
+
+h2, h3, h4 {
+    color: #f10b0b; /* Best to stick with matching colors */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 1rem;
+    color: white;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #ddd;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('images/sphere.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%; 
+    background-size: cover;
+    color: white;
+    text-align: center; 
+    padding: 4rem 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Strong shadow for contrast, no overlay */
+    position: relative; /* For text positioning */
+    min-height: 400px; 
+}
+
+/* Position the welcome text */
+.hero h2 {
+    position: absolute;
+    top: -10px; /* Exact distance from the top, customized positioning */
+    left: 48%; /* Start from the center, customized positioning */ 
+    margin-left: -175px; 
+    font-size: 2rem; /* Larger text for emphasis */
+    z-index: 2;
+}
+
+.hero p {
+    position: absolute;
+    top: 45px; 
+    left: 50%; 
+    margin-left: -170px; 
+    z-index: 2;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 2rem;
+}
+
+.about p {
+    font-weight: bold; /* adding boldness here to stand out */
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    font-style: italic; /* added Italic for some style on the button */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+/* Events Page Specific Styles */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem; /* Adds space below the entire grid to push footer down */
+}
+
+.event {
+    background-color: #f9f9f9; 
+    padding: 1rem; /* for simple spacing inside each event */
+    border: 1px solid #ddd; /* Subtle border for separation */
+    border-radius: 5px; /* Rounded corners for a modern look and extra styling points */
+    margin-bottom: 1rem; /* for more space below each event, including the last one */
+}
+
+.event h3 {
+    color: #f10b0b; /* Red to match the theme */
+    font-weight: bold; /* Bold for emphasis */
+    font-size: 1.5rem; 
+    margin-bottom: 0.5rem; 
+}
+
+.event p {
+    line-height: 1.5; /* Better spacing for readability */
+    margin: 0.5rem 0; /* Space above and below paragraphs */
+}
+
+.event img {
+    width: 100%; 
+    max-width: 300px; /* Limits image size to prevent stretching too large */
+    height: auto; /* Maintains aspect ratio */
+    margin: 0.5rem 0; /* Adds space above and below the image */
+    display: block; 
+    border-radius: 5px; 
+}
+
+.event h4 {
+    color: #f10b0b; /* Red to match the theme */
+    font-weight: bold; /* Bold for emphasis */
+    font-size: 1.2rem; 
+    margin-top: 1rem; 
+}
+
+.event p:last-child { /* Headliner names */
+    font-style: italic; /* Optional italics for a extra effect */
+    margin-bottom: 0; /* Remove extra space at the bottom */
+}
+
+.event:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* needed effect */
+}
+
+/* Menu Page */
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+
+.menu-table th {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+.menu-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.menu-table tr:hover {
+    background-color: #eee;
+}
+
+/* Location Page */
+.location-info {
+    text-align: center;
+}
+
+.location-info iframe {
+    max-width: 100%;
+    margin-top: 1rem;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Main content (common to all pages) */
+main {
+    flex: 1; /* Allows main to grow and push footer to the bottom */
+    padding-bottom: 2rem; /* Adds space at the bottom of main to ensure footer isn’t cramped */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .hero {
+        min-height: 300px;
+        padding: 2rem 1rem;
+    }
+    .hero h2 {
+        top: 15px; 
+        margin-left: -120px; /* Can tweak a bit */
+    }
+    .hero p {
+        top: 50px;
+        margin-left: -180px; /* Can also tweak a bit here */
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 1.5rem; 
+    }
+    .event {
+        margin-bottom: 0.5rem; /* Getting rid of huge gap */
+    }
+    .event img {
+        max-width: 250px; 
+    }
+    footer {
+        margin-top: 1.5rem; /* major space removed above footer on tablets */
+    }
+    main {
+        padding-bottom: 1.5rem; /* same as above */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 200px;
+    }
+    .hero h2 {
+        top: 10px; /* Even higher on mobile */
+        font-size: 1.5rem; /* Slightly smaller text */
+        margin-left: -100px; /* Adjust for mobile can be tweaked as well as below */
+    }
+    .hero p {
+        top: 40px;
+        font-size: 1rem;
+        margin-left: -160px; /* can tweak */
+    }
+
+    .events-grid {
+        padding-bottom: 1rem; /* Even less space below grid on mobile, same applies below */
+    }
+    .event {
+        margin-bottom: 0.3rem; 
+    }
+    .event img {
+        max-width: 200px; /* smaller images on mobile */
+    }
+    footer {
+        margin-top: 1rem; 
+    }
+    .event h3 {
+        font-size: 1rem; 
+    }
+    .event h4 {
+        font-size: 0.9rem; 
+    }
+    main {
+        padding-bottom: 1rem; /* Final removal of space near bottom for mobile, project wrap up */
+    }
+}
